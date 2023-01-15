@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style>
+        *{
+            background-color: bisque;
+        }
+        h1{
+            color: blue;
+            
+            padding-left: 45%;
+        }
+        .Main{
+             display: grid;
+             grid-auto-flow: row;
+        }
+        .items{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .single{ 
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="Main">
+       <h1>To- do list</h1>
+       <input  type="text" name="Item"/>
+       <button>Add</button>
+
+             <div class="items">
+                <div class= "single"></div>
+            </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="Jquery.js"></script>
+    <script>
+        //Jquery Code here:
+        let input = $("input[type=text]");
+        let deleteButton = $("<button>delete</button>")
+        $(document).ready(function(){
+            $("button").click(function(){  //creating new note 
+               const elementaya =$("<div><div>");
+                elementaya.text(input.val());
+                elementaya.addClass("single");
+                elementaya.appendTo("div.items");
+            
+            
+              elementaya.click(function(){
+              elementaya.wrap("<strike>");;
+              })
+              elementaya.dblclick(function(){
+              elementaya.remove();
+              })
+
+            })
+        });
+    </script>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open("get",".../data/pie.json")
+    </script>
+</body>
